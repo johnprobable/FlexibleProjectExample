@@ -3,12 +3,9 @@
 set -e -x
 
 cd "$(dirname "$0")"
-
 source ./utils.sh
 
-
 ./download_dependencies.sh
-
 ./generate-schema-descriptor.sh
 
 # For each worker:
