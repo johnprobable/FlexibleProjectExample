@@ -2,10 +2,9 @@
 
 SDK_VERSION="13.5.1"
 
-WORKER_DIRS=(HelloWorker DiceWorker client)
-BUILD_DIR="$(pwd)/../.."
-TOOLS_DIR="${BUILD_DIR}/SpatialOS/tools/${SDK_VERSION}"
-SCHEMA_DIR="${BUILD_DIR}"/SpatialOS/schema
+WORKER_DIRS=("../../HelloWorker" "../../DiceWorker" "../../client")
+TOOLS_DIR="$(pwd)/../tools/${SDK_VERSION}"
+SCHEMA_DIR="$(pwd)/../schema"
 
 function isLinux() {
   [[ "$(uname -s)" == "Linux" ]]

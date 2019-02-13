@@ -2,9 +2,9 @@
 
 set -e -x
 source ./utils.sh
-pushd "../"
 
-SCHEMA_BIN_DIR="${BUILD_DIR}"/SpatialOS/schema_out/bin
+SCHEMA_BIN_DIR="$(pwd)/../schema_out/bin"
+mkdir -p "${SCHEMA_BIN_DIR}"
 
 # Generate a schema descriptor from the schemas:
 "${TOOLS_DIR}"/schema_compiler/schema_compiler \
@@ -15,4 +15,3 @@ SCHEMA_BIN_DIR="${BUILD_DIR}"/SpatialOS/schema_out/bin
   "${SCHEMA_DIR}"/*.schema \
   "${TOOLS_DIR}"/standard_library/improbable/*.schema
 
-popd

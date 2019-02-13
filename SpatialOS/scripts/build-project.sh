@@ -13,7 +13,7 @@ source ./utils.sh
 
 # For each worker:
 for WORKER in "${WORKER_DIRS[@]}"; do
-  pushd "${BUILD_DIR}/${WORKER}"
+  pushd "${WORKER}"
   # Compile UserCode + GeneratedC# + CoreSDK + C#SDK into a binary
   ./build.sh
   popd

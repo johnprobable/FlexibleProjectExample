@@ -32,10 +32,9 @@ retrievePackage "worker_sdk" "core-dynamic-x86_64-win32" "lib/improbable/sdk/${S
 retrievePackage "worker_sdk" "core-dynamic-x86_64-linux" "lib/improbable/sdk/${SDK_VERSION}/linux64"
 retrievePackage "worker_sdk" "core-dynamic-x86_64-macos" "lib/improbable/sdk/${SDK_VERSION}/macos64"
 
-BUILD_DIR="$(pwd)/../.."
 # For each worker:
 for WORKER in "${WORKER_DIRS[@]}"; do
-  cp -r "${TOOLS_DIR}/lib" "${BUILD_DIR}/${WORKER}"
+  cp -r "${TOOLS_DIR}/lib" "${WORKER}"
 done
 
 rm -rf "${TOOLS_DIR}/lib"
