@@ -2,7 +2,9 @@
 
 set -e -x
 
-source ././../SpatialOS/scripts/utils.sh
+pushd "../SpatialOS/scripts"
+source ./utils.sh
+popd
 
 # Generate C# code from the schemas:
 OUT_DIR="src/improbable/generated"

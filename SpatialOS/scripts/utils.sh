@@ -2,7 +2,7 @@
 
 SDK_VERSION="13.5.1"
 
-WORKER_DIRS=(HelloWorker OtherWorkers/DiceWorker OtherWorkers/Interactive/client)
+WORKER_DIRS=(HelloWorker DiceWorker client)
 BUILD_DIR="$(pwd)/../.."
 TOOLS_DIR="${BUILD_DIR}/SpatialOS/tools/${SDK_VERSION}"
 SCHEMA_DIR="${BUILD_DIR}"/SpatialOS/schema
