@@ -3,8 +3,8 @@
 set -e -x
 
 cd "$(dirname "$0")"
+source ./utils.sh
 
-SDK_VERSION="$1"
 TOOLS_DIR="$(pwd)/../tools/${SDK_VERSION}"
 mkdir -p "${TOOLS_DIR}"
 
@@ -20,33 +20,6 @@ retrievePackage() {
   popd
 }
 
-function isLinux() {
-  [[ "$(uname -s)" == "Linux" ]]
-}
-
-function isMacOS() {
-  [[ "$(uname -s)" == "Darwin" ]]
-}
-
-function isWindows() {
-  ! (isLinux || isMacOS)
-}
-
-# Return the target platform used by worker package names built for this OS.
-function getPlatformName() {
-  if isLinux; then
-    echo "linux"
-  elif isMacOS; then
-    echo "macos"
-  elif isWindows; then
-    echo "win32"
-  else
-    echo "ERROR: Unknown platform." >&2
-    exit 1
-  fi
-}
-PLATFORM_NAME=$(getPlatformName)
-
 # Get the tools:
 # * Spatial Schema compiler
 # * Standard Library Schemas
@@ -59,14 +32,10 @@ retrievePackage "worker_sdk" "core-dynamic-x86_64-win32" "lib/improbable/sdk/${S
 retrievePackage "worker_sdk" "core-dynamic-x86_64-linux" "lib/improbable/sdk/${SDK_VERSION}/linux64"
 retrievePackage "worker_sdk" "core-dynamic-x86_64-macos" "lib/improbable/sdk/${SDK_VERSION}/macos64"
 
-WORKER_DIRS=(HelloWorker OtherWorkers/DiceWorker OtherWorkers/Interactive/client)
 BUILD_DIR="$(pwd)/../.."
-moveLib() {
-  # For each worker:
-  for WORKER in "${WORKER_DIRS[@]}"; do
-    cp -r "${TOOLS_DIR}/lib" "${BUILD_DIR}/${WORKER}"
-  done
-}
+# For each worker:
+for WORKER in "${WORKER_DIRS[@]}"; do
+  cp -r "${TOOLS_DIR}/lib" "${BUILD_DIR}/${WORKER}"
+done
 
-moveLib
 rm -rf "${TOOLS_DIR}/lib"

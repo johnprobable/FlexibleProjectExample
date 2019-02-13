@@ -4,16 +4,12 @@ set -e -x
 
 cd "$(dirname "$0")"
 
-echo $(pwd)
+source ./utils.sh
 
-WORKER_DIRS=(HelloWorker OtherWorkers/DiceWorker OtherWorkers/Interactive/client)
-SDK_VERSION="13.5.1"
-BUILD_DIR="$(pwd)/../.."
-TOOLS_DIR="${BUILD_DIR}/SpatialOS/tools/${SDK_VERSION}"
 
-./download_dependencies.sh "${SDK_VERSION}"
+./download_dependencies.sh
 
-./generate-schema-descriptor.sh "${BUILD_DIR}" "${TOOLS_DIR}"
+./generate-schema-descriptor.sh
 
 # For each worker:
 for WORKER in "${WORKER_DIRS[@]}"; do
