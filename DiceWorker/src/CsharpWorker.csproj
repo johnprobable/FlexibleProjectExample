@@ -43,7 +43,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\SpatialOS\schema_out\bin\generated\csharp\**\*.cs" />
+    <Compile Include="..\..\SpatialOS\schema_out\bin\generated\csharp\**\*.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
