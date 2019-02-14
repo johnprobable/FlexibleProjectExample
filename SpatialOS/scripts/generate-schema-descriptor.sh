@@ -3,7 +3,7 @@
 set -e -x
 source ./utils.sh
 
-SCHEMA_BIN_DIR="$(pwd)/../schema_out/bin"
+SCHEMA_BIN_DIR="$(pwd)/../schema_out"
 mkdir -p "${SCHEMA_BIN_DIR}"
 
 # Generate a schema descriptor from the schemas:
