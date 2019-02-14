@@ -1,7 +1,5 @@
 .improbable/
 .idea/
-.envrc
-.DS_Store
 spatialos.*.build.json
 logs/
 
@@ -10,14 +8,12 @@ SpatialOS/tools/
 
 client/bin/
 client/lib/
-client/src/improbable/
+client/src/improbable/generated
 
 HelloWorker/bin/
 HelloWorker/lib/
-HelloWorker/src/improbable/
+HelloWorker/src/improbable/generated
 
 DiceWorker/bin/
 DiceWorker/lib/
-DiceWorker/src/improbable/
-
-clean.sh
+DiceWorker/src/improbable/generated
