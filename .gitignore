@@ -3,7 +3,8 @@
 spatialos.*.build.json
 logs/
 
-SpatialOS/schema_out
+SpatialOS/schema/bin
+SpatialOS/schema/improbable
 SpatialOS/tools/
 
 client/bin/

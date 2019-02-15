@@ -5,6 +5,7 @@ SDK_VERSION="13.5.1"
 WORKER_DIRS=("../../HelloWorker" "../../DiceWorker" "../../client")
 TOOLS_DIR="$(pwd)/../tools/${SDK_VERSION}"
 SCHEMA_DIR="$(pwd)/../schema"
+SCHEMA_BIN_DIR="${SCHEMA_DIR}/bin"
 
 function isLinux() {
   [[ "$(uname -s)" == "Linux" ]]

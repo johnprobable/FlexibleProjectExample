@@ -11,11 +11,10 @@ OUT_DIR="src/improbable/generated"
 mkdir -p "${OUT_DIR}"
 "${TOOLS_DIR}"/schema_compiler/schema_compiler \
   --schema_path="${SCHEMA_DIR}" \
-  --schema_path="$TOOLS_DIR"/standard_library \
   --csharp_out="${OUT_DIR}" \
   --load_all_schema_on_schema_path \
   "${SCHEMA_DIR}"/*.schema \
-  "${TOOLS_DIR}"/standard_library/improbable/*.schema
+  "${SCHEMA_DIR}"/improbable/*.schema
 
 BUILD_PLATFORMS=(macOS64 Windows64 Linux64)
 
