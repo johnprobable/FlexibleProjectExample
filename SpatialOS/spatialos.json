@@ -1,12 +1,13 @@
 {
   "configurationVersion": "0.1",
   "projectName": "your_project_name_here",
-  "schemaDescriptor": "./schema_out/schema.descriptor",
+  "schemaDescriptor": "./schema/bin/schema.descriptor",
   "clientWorkers": [
     "./client_worker_config.json"
   ],
   "serverWorkers": [
     "./hello_worker_config.json",
     "./dice_worker_config.json"
-  ]
+  ],
+  "launch_config": "./deployment.json"
 }
