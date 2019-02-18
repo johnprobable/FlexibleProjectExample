@@ -81,6 +81,8 @@ $ spatial alpha cloud launch -d <your-deployment-name> -a <your-assembly-name>
 There are no known issues at the moment.
 
 ## Reference documentation
+
+### Configuration files
 [Project configuration file](docs/reference/project-configuration.md)
 
 [Launch configuration file](docs/reference/launch-configuration.md)
@@ -89,7 +91,16 @@ There are no known issues at the moment.
 
 [Client worker configuration file](docs/reference/client-worker-configuration.md)
 
-## Migration Guide
+### Build process
+[Building a worker executable in the FPL](docs/build-process/worker-build-process.md)
+
+[Building a schema descriptor in the FPL](docs/build-process/schema-descriptor-build-process.md)
+
+### Migration Guide from the [current project layout (CPL)](https://docs.improbable.io/reference/latest/shared/reference/project-structure) to the flexible project layout (FPL)
+[Migration guide master page](docs/migration-guide/migration-guide-master-page.md)
+
+[Converting project configuration files to FPL](docs/migration-guide/configs-conversion-guide.md)
+
 [FAQ](docs/migration-guide/faq.md)
 
 ## Changelog
