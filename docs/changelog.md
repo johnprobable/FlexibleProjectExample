@@ -1,5 +1,15 @@
 # Changelog
 
+* **18 Feb 2019:**
+  * Added a `build.sh` script to each worker so that it is possible to build a single worker with the script.
+  * Added a `download_dependencies.sh` script to `SpatialOS/scripts/` for downloading schema compiler, standard library schemas and SDKs. 
+  * Added a `generate-schema-descriptor.sh` script to `SpatialOS/scripts/` for generating a schema descriptor from the schemas. 
+  * Added a `utils.sh` script to `SpatialOS/scripts` for storing paths to workers, tools, schemas.
+  * Added a `build-project.sh` script to `SpatialOS/scripts/`. It calls other scripts to build the project.
+  * Removed `build.sh` and `clean.sh`.
+  * Moved `deployment.json` from `SpatialOS/` to `SpatialOS/launch_configs/`.
+  * Modified `*.csproj` in all worker folders so that all dependencies point to the files inside the worker dir.
+  * Flattened all worker folders into the top dir and modified `SpatialOS/spatialos.json` to reflect the changes to worker paths.
 * **15 Feb 2019:**
   * Changed the signature of the `spatial alpha cloud upload` and `spatial alpha cloud launch` CLI commands: Replaced all positional arguments with mandatory flags. For more information, please run the commands with the `--help` flag.
   * Removed the `--optimize_for_runtime_v2` CLI flag and added a new `--using_old_loadbalancer` flag for `spatial alpha local launch`. We now optimize for the [new Runtime](https://docs.improbable.io/reference/latest/releases/upgrade-guides/upgrade-runtime) by default. Please set the `--using_old_loadbalancer` flag if you want to start a local deployment with the old Runtime.
